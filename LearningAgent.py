@@ -1,6 +1,5 @@
 import pickle
 import random
-import os
 
 from Game2048 import *
 
@@ -21,11 +20,8 @@ class Player(BasePlayer):
 		
 	def loadData(self, filename):
 		print('Loading data')
-		try:
-			with open(filename, 'rb') as dataFile:
-				self._valueLook = pickle.load(dataFile)
-		except FileNotFoundError:
-			print(f"File '{filename}' not found. Starting with random values.")
+		with open(filename, 'rb') as dataFile:
+			self._valueTable = pickle.load(dataFile)
 		
 	def saveData(self, filename):
 		print('Saving data')

@@ -2,8 +2,8 @@ from Game2048 import *
 import time
 
 class Player(BasePlayer):
-    def __init__(self, timeLimit):
-        BasePlayer.__init__(self, timeLimit)
+    def _init_(self, timeLimit):
+        BasePlayer._init_(self, timeLimit)
         self._startTime = 0
         self._maxDepth = 4  # Tune based on performance
 
